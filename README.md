@@ -2,6 +2,8 @@
 
 A fast CLI tool for discovering devices on your local network. No root privileges required.
 
+> Japanese documentation is available [below](#localscan-日本語).
+
 ## Features
 
 - Auto-detection of network interfaces
@@ -14,14 +16,52 @@ A fast CLI tool for discovering devices on your local network. No root privilege
 - Diff detection against previous scan
 - Cross-platform (Linux / macOS / Windows)
 
-## Requirements
-
-- Go 1.24+
-
 ## Installation
 
+Download the binary for your platform from the [Releases](https://github.com/kidatti/localscan/releases) page.
+
+### macOS (Apple Silicon)
+
 ```bash
-git clone <repository-url>
+curl -LO https://github.com/kidatti/localscan/releases/latest/download/localscan-darwin-arm64.tar.gz
+tar xzf localscan-darwin-arm64.tar.gz
+xattr -d com.apple.quarantine localscan
+sudo mv localscan /usr/local/bin/
+```
+
+### macOS (Intel)
+
+```bash
+curl -LO https://github.com/kidatti/localscan/releases/latest/download/localscan-darwin-amd64.tar.gz
+tar xzf localscan-darwin-amd64.tar.gz
+xattr -d com.apple.quarantine localscan
+sudo mv localscan /usr/local/bin/
+```
+
+### Linux (x86_64)
+
+```bash
+curl -LO https://github.com/kidatti/localscan/releases/latest/download/localscan-linux-amd64.tar.gz
+tar xzf localscan-linux-amd64.tar.gz
+sudo mv localscan /usr/local/bin/
+```
+
+### Linux (ARM64)
+
+```bash
+curl -LO https://github.com/kidatti/localscan/releases/latest/download/localscan-linux-arm64.tar.gz
+tar xzf localscan-linux-arm64.tar.gz
+sudo mv localscan /usr/local/bin/
+```
+
+### Windows
+
+[Releases](https://github.com/kidatti/localscan/releases) から `localscan-windows-amd64.zip` をダウンロードし、展開して PATH の通ったフォルダに配置してください。
+
+### Build from source
+
+```bash
+git clone https://github.com/kidatti/localscan.git
 cd localscan
 make build
 ```
@@ -152,10 +192,6 @@ Binaries are generated in `dist/`:
 - `localscan-darwin-arm64`
 - `localscan-windows-amd64.exe`
 
-## License
-
-MIT
-
 ---
 
 # localscan (日本語)
@@ -174,14 +210,52 @@ MIT
 - 前回スキャンとの差分検出
 - クロスプラットフォーム対応（Linux / macOS / Windows）
 
-## 必要環境
-
-- Go 1.24 以上
-
 ## インストール
 
+[Releases](https://github.com/kidatti/localscan/releases) ページからお使いの環境に合ったバイナリをダウンロードしてください。
+
+### macOS (Apple Silicon)
+
 ```bash
-git clone <repository-url>
+curl -LO https://github.com/kidatti/localscan/releases/latest/download/localscan-darwin-arm64.tar.gz
+tar xzf localscan-darwin-arm64.tar.gz
+xattr -d com.apple.quarantine localscan
+sudo mv localscan /usr/local/bin/
+```
+
+### macOS (Intel)
+
+```bash
+curl -LO https://github.com/kidatti/localscan/releases/latest/download/localscan-darwin-amd64.tar.gz
+tar xzf localscan-darwin-amd64.tar.gz
+xattr -d com.apple.quarantine localscan
+sudo mv localscan /usr/local/bin/
+```
+
+### Linux (x86_64)
+
+```bash
+curl -LO https://github.com/kidatti/localscan/releases/latest/download/localscan-linux-amd64.tar.gz
+tar xzf localscan-linux-amd64.tar.gz
+sudo mv localscan /usr/local/bin/
+```
+
+### Linux (ARM64)
+
+```bash
+curl -LO https://github.com/kidatti/localscan/releases/latest/download/localscan-linux-arm64.tar.gz
+tar xzf localscan-linux-arm64.tar.gz
+sudo mv localscan /usr/local/bin/
+```
+
+### Windows
+
+[Releases](https://github.com/kidatti/localscan/releases) から `localscan-windows-amd64.zip` をダウンロードし、展開して PATH の通ったフォルダに配置してください。
+
+### ソースからビルド
+
+```bash
+git clone https://github.com/kidatti/localscan.git
 cd localscan
 make build
 ```
